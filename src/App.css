@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+.display {
+  display: flex;
+  justify-content: space-around;
+}
+@media (max-width: 474px) {
+  .mobile {
+    width: auto !important;
+    margin: 0.7rem;
+  }
+  .title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.125;
+  }
+}
