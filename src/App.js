@@ -31,6 +31,7 @@ const App = () => {
   }, [movieTitle, movieTitle2, singleMoviesResponse, singleMoviesResponse2]);
 
   function compareMovies(movie1, movie2) {
+     //Temporarely using this way to compare statistics
     const mov1 = parseInt(
       movie1.BoxOffice.replace(/\$/g, "").replace(/,/g, "")
     );
