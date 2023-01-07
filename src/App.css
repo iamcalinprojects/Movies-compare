@@ -48,6 +48,9 @@
   .noFlexMobile {
     display: block !important;
   }
+  .mobileFlexDirection {
+    flex-direction: row !important;
+  }
   .title {
     font-size: 1.4rem;
     font-weight: 600;

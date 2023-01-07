@@ -225,6 +225,7 @@ const App = () => {
     <div className='container'>
       <div style={{ display: "flex", justifyContent: "end" }}>
         <div
+          className='mobileFlexDirection'
           style={{
             display: "flex",
             flexDirection: "column",
