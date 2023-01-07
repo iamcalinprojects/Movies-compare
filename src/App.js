@@ -245,7 +245,7 @@ const App = () => {
         </div>
       </div>
       <div
-        className='columns'
+        className='columns noFlexMobile'
         style={{
           margin: "0px",
           display: "flex",

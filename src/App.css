@@ -45,6 +45,9 @@
     width: auto !important;
     margin: 0.7rem;
   }
+  .noFlexMobile {
+    display: block !important;
+  }
   .title {
     font-size: 1.4rem;
     font-weight: 600;
