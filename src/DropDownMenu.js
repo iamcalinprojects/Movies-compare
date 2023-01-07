@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 
 const DropDownMenu = ({ moviesResponse, fetchSigleMovie }) => {
   const dropdown = document.querySelector(".dropdown");
@@ -14,6 +13,7 @@ const DropDownMenu = ({ moviesResponse, fetchSigleMovie }) => {
           : moviesResponse.map((movie) =>
               movie.Poster === "N/A" ? null : (
                 <a
+                  href='#1'
                   className='dropdown-item'
                   onClick={() => {
                     fetchSigleMovie(movie.imdbID, movie.Title);
@@ -22,7 +22,10 @@ const DropDownMenu = ({ moviesResponse, fetchSigleMovie }) => {
                     tutorial.classList.add("is-hidden");
                   }}
                 >
-                  <img src={movie.Poster === "N/A" ? null : movie.Poster} />
+                  <img
+                    src={movie.Poster === "N/A" ? null : movie.Poster}
+                    alt='movie poster'
+                  />
                   {movie.Title} {movie.Year}
                 </a>
               )

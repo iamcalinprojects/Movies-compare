@@ -31,6 +31,7 @@ const App = () => {
   }, [movieTitle, movieTitle2, singleMoviesResponse, singleMoviesResponse2]);
 
   function compareMovies(movie1, movie2) {
+    //Temporarely using this way to compare statistics
     const mov1 = parseInt(
       movie1.BoxOffice.replace(/\$/g, "").replace(/,/g, "")
     );
@@ -222,70 +223,102 @@ const App = () => {
 
   return (
     <div className='container'>
-      <div className='columns' style={{ margin: "0px" }}>
-        <div id='left' className='column '>
-          <div class='dropdown ' style={{ marginBottom: "2rem" }}>
-            <div class='dropdown-trigger'>
-              <label>
-                <b>Search for a movie</b>
-              </label>
+      <div style={{ display: "flex", justifyContent: "end" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <span>
+            <span class='icon is-medium has-text-success'>
+              <i class='fas fa-square'></i>
+            </span>
+            <span>Color is better</span>
+          </span>
+          <span>
+            <span class='icon is-medium has-text-warning'>
+              <i class='fas fa-square'></i>
+            </span>
+            <span>Color is worse</span>
+          </span>
+        </div>
+      </div>
+      <div
+        className='columns'
+        style={{
+          margin: "0px",
+          display: "flex",
+          justifyContent: "space-around",
+        }}
+      >
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <div id='left' className='column '>
+            <div class='dropdown ' style={{ marginBottom: "2rem" }}>
+              <div class='dropdown-trigger'>
+                <label>
+                  <b>Search for a movie</b>
+                </label>
 
-              <input
-                className='input'
-                value={movieTitle}
-                onChange={(e) => {
-                  setMovieTitle(e.target.value);
-                  dropdown.classList.add("is-active");
-                }}
-                type='text'
-              />
+                <input
+                  className='input'
+                  value={movieTitle}
+                  onChange={(e) => {
+                    setMovieTitle(e.target.value);
+                    dropdown.classList.add("is-active");
+                  }}
+                  type='text'
+                />
+              </div>
+              <DropDownMenu
+                moviesResponse={moviesResponse}
+                fetchSigleMovie={fetchSigleMovie}
+              ></DropDownMenu>
             </div>
-            <DropDownMenu
-              moviesResponse={moviesResponse}
-              fetchSigleMovie={fetchSigleMovie}
-            ></DropDownMenu>
-          </div>
-          <div>
-            {movieTitle === "" ? null : (
-              <MovieDetails
-                singleMoviesResponse={singleMoviesResponse}
-              ></MovieDetails>
-            )}
+            <div>
+              {movieTitle === "" ? null : (
+                <MovieDetails
+                  singleMoviesResponse={singleMoviesResponse}
+                ></MovieDetails>
+              )}
+            </div>
           </div>
         </div>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <div id='right' className='column '>
+            <div class='dropdown close' style={{ marginBottom: "2rem" }}>
+              <div class='dropdown-trigger'>
+                <label>
+                  <b>Search for a movie</b>
+                </label>
 
-        <div id='right' className='column '>
-          <div class='dropdown close' style={{ marginBottom: "2rem" }}>
-            <div class='dropdown-trigger'>
-              <label>
-                <b>Search for a movie</b>
-              </label>
-
-              <input
-                className='input'
-                value={movieTitle2}
-                onChange={(e) => {
-                  setMovieTitle2(e.target.value);
-                  dropdown2.classList.add("is-active");
-                }}
-                type='text'
-              />
+                <input
+                  className='input'
+                  value={movieTitle2}
+                  onChange={(e) => {
+                    setMovieTitle2(e.target.value);
+                    dropdown2.classList.add("is-active");
+                  }}
+                  type='text'
+                />
+              </div>
+              <DropDownMenu
+                moviesResponse={moviesResponse2}
+                fetchSigleMovie={fetchSigleMovie2}
+              ></DropDownMenu>
             </div>
-            <DropDownMenu
-              moviesResponse={moviesResponse2}
-              fetchSigleMovie={fetchSigleMovie2}
-            ></DropDownMenu>
-          </div>
-          <div>
-            {movieTitle2 === "" ? null : (
-              <MovieDetails
-                singleMoviesResponse={singleMoviesResponse2}
-              ></MovieDetails>
-            )}
+            <div>
+              {movieTitle2 === "" ? null : (
+                <MovieDetails
+                  singleMoviesResponse={singleMoviesResponse2}
+                ></MovieDetails>
+              )}
+            </div>
           </div>
         </div>
       </div>
       {/* <div className='columns'> */}
+
       <div
         className='column is-half notification is-primary tutorial mobile'
         style={{ width: "auto" }}
