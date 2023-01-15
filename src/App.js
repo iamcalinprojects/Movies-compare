@@ -235,13 +235,13 @@ const App = () => {
             <span class='icon is-medium has-text-success'>
               <i class='fas fa-square'></i>
             </span>
-            <span>Color is better</span>
+            <span>Winner</span>
           </span>
           <span>
             <span class='icon is-medium has-text-warning'>
               <i class='fas fa-square'></i>
             </span>
-            <span>Color is worse</span>
+            <span>Loser</span>
           </span>
         </div>
       </div>
