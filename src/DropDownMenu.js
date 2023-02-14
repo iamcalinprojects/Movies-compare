@@ -6,8 +6,8 @@ const DropDownMenu = ({ moviesResponse, fetchSigleMovie }) => {
   const tutorial = document.querySelector(".tutorial");
 
   return (
-    <div class='dropdown-menu' id='dropdown-menu' role='menu'>
-      <div class='dropdown-content'>
+    <div className='dropdown-menu' id='dropdown-menu' role='menu'>
+      <div className='dropdown-content'>
         {moviesResponse === undefined
           ? null
           : moviesResponse.map((movie) =>
